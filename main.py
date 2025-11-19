@@ -38,6 +38,11 @@ def main():
                 log_event("player_hit")
                 print("Game over!")
                 sys.exit()
+            for shot in shots:
+                if CircleShape.collide_with(aster,shot):
+                    log_event("asteroid_shot")
+                    shot.kill()
+                    aster.split()
         for d in drawable:
             d.draw(screen)
         #player.draw(screen)
